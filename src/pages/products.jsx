@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Header from '../components/header';
+import ProductBox from '../components/productBox';
+import {AppContext} from '../store/app';
 
 const Products = () => {
+	
+	// app context
+	const context = useContext(AppContext);
+
 	return (
-		<div>hello world from products page</div>
+		<div>
+			<Header />
+			<ProductBox />
+		</div>
 	);
 };
 
