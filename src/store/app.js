@@ -24,9 +24,16 @@ const AppContextProvider = (props) => {
 		//TODO: define the login for this function
 	};
 
+
+	// save products data
+	const saveProducts = (data) => {
+		changeProducts(data);
+	}
+	
 	// context props
 	const contextProps = {
 		data: products,
+		saveProducts,
 		sortByMostPopular,
 		sortByMostSale
 	}
