@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { ToastContainer }   from 'react-toastify';
 
 // craete new context
 export const AppContext = React.createContext();
@@ -39,11 +40,21 @@ const AppContextProvider = (props) => {
 		sortByMostSale
 	};
 
-	return (
+	return <React.Fragment>
+		<ToastContainer
+			position="top-right"
+			hideProgressBar={true}
+			newestOnTop={false}
+			toastClassName="Base-font"
+			closeOnClick
+			rtl
+			draggable
+			pauseOnHover
+		/>
 		<AppContext.Provider value={contextProps}>
 			{props.children}
 		</AppContext.Provider>
-	);
+	</React.Fragment>
 
 };
 

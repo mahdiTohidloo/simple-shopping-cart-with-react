@@ -21,17 +21,18 @@ const Products = () => {
 
 	// fetch data from server
 	useEffect(() => {
-		fetch(APIRoutes.products)
-		.then((payload) => payload.json())
-		.then((payload) => {
-			// stop showing progress indicator
-			changeLoadingDataStatus(false);
-			// assign an image to each product item and save the data
-			context.saveProducts([...payload.data.items].map((item) => {
-				return {...item, image: productImages[Math.floor(Math.random() * (+2 - +0)) + +0]}
-			}));
-		})
-	}, []);
+		if (context.data.length === 0)
+			fetch(APIRoutes.products)
+			.then((payload) => payload.json())
+			.then((payload) => {
+				// stop showing progress indicator
+				changeLoadingDataStatus(false);
+				// assign an image to each product item and save the data
+				context.saveProducts([...payload.data.items].map((item) => {
+					return {...item, image: productImages[Math.floor(Math.random() * (+2 - +0)) + +0]}
+				}));
+			});
+	});
 
 	return (
 		<CartContextProvider>

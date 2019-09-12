@@ -116,6 +116,7 @@
 	border-color: $color-green transparent $color-green transparent;
 	animation: Loading-animation 2.2s infinite;
 }
+
 @keyframes Loading-animation {
 	0% {
 		transform: rotate(0);
@@ -130,4 +131,7 @@
 	}
 }
   
-  
+//*** toastr style *****************
+.Toastify__toast--success {
+	background-color : $color-green;
+}

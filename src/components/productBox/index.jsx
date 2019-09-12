@@ -1,6 +1,7 @@
 import React, {useContext} 	from 'react';
 import Button 	            from '../forms/button';
 import {CartContext}        from "../../store/cart";
+import {showSuccessToastr} from "../../utilities/toastr";
 
 const ProductBox = ({ data }) => {
 	const context = useContext(CartContext);
@@ -24,7 +25,10 @@ const ProductBox = ({ data }) => {
 					<span className="cta">
 						<Button
 							className="Full-width"
-							onClick={() => context.addProduct(data)}
+							onClick={() => {
+								showSuccessToastr('محصول با موفقیت به سبد خرید اضافه شد');
+								context.addProduct(data);
+							}}
 							disabled={data.quantity === 0}
 						/>
 					</span>

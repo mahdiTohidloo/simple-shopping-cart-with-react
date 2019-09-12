@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {showSuccessToastr} from "../utilities/toastr";
 
 
 export const CartContext = React.createContext();
@@ -34,6 +35,7 @@ const CartContextProvider = (props) => {
 	};
 
 	const removeProduct = (productData) => {
+		showSuccessToastr('محصول با موفقیت از سبد خرید حذف شد');
 		changeProducts([...products].filter((existProduct) => existProduct.id !== productData.id));
 	};
 
