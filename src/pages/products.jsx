@@ -24,13 +24,16 @@ const Products = () => {
 	return (
 		<div>
 			<Header />
-			{
-				// generate product box list by saved data in context
-				context.data.map((product, index) =>
-					<ProductBox key={index}/>
-				)
-			}
-			
+			<div className="row">
+				{
+					// generate product box list by saved data in context
+					context.data.map((product, index) =>
+						<div key={index} className="col l4">
+							<ProductBox/>
+						</div>
+					)
+				}
+			</div>
 		</div>
 	);
 };
