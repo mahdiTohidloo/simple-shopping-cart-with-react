@@ -46,6 +46,9 @@
 		@include displayInlineFlex();
 		align-items: center;
 		font-size: 13px;
+		span:last-child {
+			max-width: 240px;
+		}
 		.index-number {
 			width: 20px;
 			text-align: center;

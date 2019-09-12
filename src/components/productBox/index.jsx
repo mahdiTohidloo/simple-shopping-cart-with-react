@@ -26,7 +26,12 @@ const ProductBox = ({ data }) => {
 						<Button
 							className="Full-width"
 							onClick={() => {
-								showSuccessToastr('محصول با موفقیت به سبد خرید اضافه شد');
+								// check if product doesn't exist , then show the success toastr
+								const isExist = context.data.filter((productItem) => productItem.id === data.id).length > 0;
+								if (!isExist)
+									showSuccessToastr('محصول با موفقیت به سبد خرید اضافه شد');
+
+								// add product to context
 								context.addProduct(data);
 							}}
 							disabled={data.quantity === 0}

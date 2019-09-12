@@ -18,6 +18,7 @@ const AppContextProvider = (props) => {
 
 	// sort by `createdAt` value. (descending)
 	const sortByNews = () => {
+		console.log([...products].sort((a, b) => b.createdAt  - a.createdAt));
 		changeProducts([...products].sort((a, b) => b.createdAt  - a.createdAt));
 	};
 
