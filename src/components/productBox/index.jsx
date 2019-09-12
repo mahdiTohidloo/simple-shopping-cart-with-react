@@ -4,17 +4,10 @@ import {CartContext}        from "../../store/cart";
 
 const ProductBox = ({ data }) => {
 	const context = useContext(CartContext);
-
-	const productImages = [
-		require('../../assets/images/product1.jpg'),
-		require('../../assets/images/product2.jpg'),
-		require('../../assets/images/product3.jpg'),
-	];
-	console.log(context.data);
 	return (
 		<section className="Product-box">
 			<figure className="image">
-				<img src={productImages[Math.floor(Math.random() * (+2 - +0)) + +0 ]} alt="" />
+				<img src={data.image} alt={data.title} />
 			</figure>
 			<div className="content">
 				<h2 className="title">

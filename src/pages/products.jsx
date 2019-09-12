@@ -1,12 +1,21 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Header 		from '../components/header';
 import ProductBox 	from '../components/productBox';
 import {AppContext} from '../store/app';
 import APIRoutes 	from '../assets/apiRoutes';
 import CartContextProvider from '../store/cart';
 
+
+// list of images to randomly generate image for each product
+const productImages = [
+	require('../assets/images/product1.jpg'),
+	require('../assets/images/product2.jpg'),
+	require('../assets/images/product3.jpg')
+];
+
 const Products = () => {
 
+	const [isLoadingData, changeLoadingDataStatus] = useState(true);
 	// app context
 	const context = useContext(AppContext);
 
@@ -15,13 +24,21 @@ const Products = () => {
 		fetch(APIRoutes.products)
 		.then((payload) => payload.json())
 		.then((payload) => {
-			context.saveProducts(payload.data.items);
+			// stop showing progress indicator
+			changeLoadingDataStatus(false);
+			// assign an image to each product item and save the data
+			context.saveProducts([...payload.data.items].map((item) => {
+				return {...item, image: productImages[Math.floor(Math.random() * (+2 - +0)) + +0]}
+			}));
 		})
 	}, []);
 
 	return (
 		<CartContextProvider>
-			<div className="Container">
+			{
+				isLoadingData && <div className="loading-wrapper"><div className="Loading" /></div>
+			}
+			<div className={isLoadingData ? "Display-none" : "Container"}>
 				<Header />
 				<div className="row">
 					{
