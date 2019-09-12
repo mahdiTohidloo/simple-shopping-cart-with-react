@@ -71,6 +71,7 @@
 			font-size: 17px;
 		}
 		i.material-icons {
+			user-select: none;
 			border: 1px solid white;
 			cursor: pointer;
 			border-radius: $border-radius-size;
