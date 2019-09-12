@@ -3,6 +3,7 @@
 	overflow: hidden;
 	flex-direction: column;
 	display:inline-flex;
+	cursor: pointer;
 	background: white;
 	@include crossTransition(all ease .4s);
 	.title {

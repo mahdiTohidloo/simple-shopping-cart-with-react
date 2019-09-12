@@ -17,6 +17,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	font-family: yekan;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -46,6 +47,6 @@ table {
 body {
 	direction: rtl;
 	color:#444444;
-	font-family: iran-sans;
+	font-family: yekan;
 	background-color: $color-light-blue;
 }
