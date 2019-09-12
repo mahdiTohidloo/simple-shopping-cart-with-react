@@ -7,13 +7,23 @@
 .Full-width {
 	width: 100% !important;
 }
+
 .Full-height {
 	height: 100% !important;
 }
+
 .Ellipsis {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.Display-none {
+	display:none !important;
+}
+
+.Left {
+	float:left !important;
 }
 
 

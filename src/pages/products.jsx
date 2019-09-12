@@ -15,7 +15,6 @@ const Products = () => {
 		fetch(APIRoutes.products)
 		.then((payload) => payload.json())
 		.then((payload) => {
-			console.log(payload);
 			context.saveProducts(payload.data.items);
 		})
 	}, []);

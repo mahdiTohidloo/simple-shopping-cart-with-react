@@ -15,13 +15,14 @@ const AppContextProvider = (props) => {
 	// current state for the contex
 	const [products, changeProducts] = useState(AppContextModel.products);
 
-
-	const sortByMostPopular = () => {
-		//TODO: define the login for this function
+	// sort by `createdAt` value. (descending)
+	const sortByNews = () => {
+		changeProducts([...products].sort((a, b) => b.createdAt  - a.createdAt));
 	};
 
+	// sort by `soldCount` value. (descending)
 	const sortByMostSale = () => {
-		//TODO: define the login for this function
+		changeProducts([...products].sort((a, b) => b.soldCount - a.soldCount));
 	};
 
 
@@ -34,7 +35,7 @@ const AppContextProvider = (props) => {
 	const contextProps = {
 		data: products,
 		saveProducts,
-		sortByMostPopular,
+		sortByNews,
 		sortByMostSale
 	}
 

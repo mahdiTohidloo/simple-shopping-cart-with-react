@@ -21,6 +21,10 @@
 	&:disabled {
 		background-color: #efefef;
 		color: #bfbfbf;
+		&:hover {
+			box-shadow: none;
+			cursor: default;
+		}
 	}
 }
 
