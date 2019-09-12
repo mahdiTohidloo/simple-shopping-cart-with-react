@@ -29,7 +29,7 @@ const AppContextProvider = (props) => {
 	// save products data
 	const saveProducts = (data) => {
 		changeProducts(data);
-	}
+	};
 	
 	// context props
 	const contextProps = {
@@ -37,7 +37,7 @@ const AppContextProvider = (props) => {
 		saveProducts,
 		sortByNews,
 		sortByMostSale
-	}
+	};
 
 	return (
 		<AppContext.Provider value={contextProps}>

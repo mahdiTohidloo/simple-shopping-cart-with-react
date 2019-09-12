@@ -3,7 +3,7 @@ import Header 		from '../components/header';
 import ProductBox 	from '../components/productBox';
 import {AppContext} from '../store/app';
 import APIRoutes 	from '../assets/apiRoutes';
-
+import CartContextProvider from '../store/cart';
 
 const Products = () => {
 
@@ -20,19 +20,21 @@ const Products = () => {
 	}, []);
 
 	return (
-		<div className="Container">
-			<Header />
-			<div className="row">
-				{
-					// generate product box list by saved data in context
-					context.data.map((product, index) =>
-						<div key={index} className="col l4 m6 s12 Product-wrapper">
-							<ProductBox data={product}/>
-						</div>
-					)
-				}
+		<CartContextProvider>
+			<div className="Container">
+				<Header />
+				<div className="row">
+					{
+						// generate product box list by saved data in context
+						context.data.map((product, index) =>
+							<div key={index} className="col l4 m6 s12 Product-wrapper">
+								<ProductBox data={product}/>
+							</div>
+						)
+					}
+				</div>
 			</div>
-		</div>
+		</CartContextProvider>
 	);
 };
 

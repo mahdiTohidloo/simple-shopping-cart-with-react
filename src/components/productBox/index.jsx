@@ -1,10 +1,13 @@
-import React 	from 'react';
+import React, {useContext} 	from 'react';
 import {
 	convertEnglishNumberToPersian
 } 				from '../../utilities/utilities';
 import Button 	from '../forms/button';
+import {CartContext} from "../../store/cart";
 
 const ProductBox = ({ data }) => {
+	const context = useContext(CartContext);
+	console.log(context);
 	return (
 		<section className="Product-box">
 			<figure className="image">
