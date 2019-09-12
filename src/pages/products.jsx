@@ -1,15 +1,14 @@
 import React, {useContext, useEffect} from 'react';
-import Header from '../components/header';
-import ProductBox from '../components/productBox';
+import Header 		from '../components/header';
+import ProductBox 	from '../components/productBox';
 import {AppContext} from '../store/app';
-import APIRoutes from '../assets/apiRoutes';
+import APIRoutes 	from '../assets/apiRoutes';
 
 
 const Products = () => {
 
 	// app context
 	const context = useContext(AppContext);
-
 
 	// fetch data from server
 	useEffect(() => {
@@ -22,14 +21,14 @@ const Products = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="Container">
 			<Header />
 			<div className="row">
 				{
 					// generate product box list by saved data in context
 					context.data.map((product, index) =>
-						<div key={index} className="col l4">
-							<ProductBox/>
+						<div key={index} className="col l4 s12 Product-wrapper">
+							<ProductBox data={product}/>
 						</div>
 					)
 				}

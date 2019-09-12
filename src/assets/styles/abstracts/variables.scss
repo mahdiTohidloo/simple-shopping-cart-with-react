@@ -26,4 +26,11 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
 //*********************************************************************************************
+$border-radius-size: 6px;
+
+//******************** colors ************************
+
+$color-light-blue: #e3f2fb;
+$color-green: #05c925;
+
 

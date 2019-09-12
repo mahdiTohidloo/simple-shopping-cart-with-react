@@ -1,0 +1,10 @@
+@mixin boxShadow() {
+	box-shadow: 0px 30px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin crossTransition($props) {
+	-webkit-transition:$props;
+	-moz-transition: $props;
+	-o-transition: $props;
+	transition: $props;
+}
