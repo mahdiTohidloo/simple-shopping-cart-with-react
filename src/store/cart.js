@@ -13,6 +13,7 @@ const CartContextProvider = (props) => {
 		return {...productData, count: 1};
 	};
 
+	// replace new products array with old array
 	const changeCartProducts = (newProducts) => {
 		changeProducts(newProducts || []);
 	};
@@ -22,10 +23,10 @@ const CartContextProvider = (props) => {
 		* check if the product is exist in cart, increment the count of the product in cart.
 		* otherwise add it to cart as new product
 		*/
-		const isExist = products.filter((existProduct) => existProduct.id === productData.id).length !== 0;
-		if (isExist) {
+		const existItem = products.filter((existProduct) => existProduct.id === productData.id)[0];
+		if (existItem) {
 			// increment exist product count
-			incrementProductCount(productData);
+			incrementProductCount(existItem);
 		} else {
 			// add product as new product
 			changeCartProducts([...products, convertProductModelToCartModel(productData)]);
@@ -41,6 +42,7 @@ const CartContextProvider = (props) => {
 		 * if selected products count is lower than than the product quantity
 		 * then increment the products count
 		 */
+		console.log(productData);
 		if (productData.count < productData.quantity) {
 			changeProducts([...products].map((product) => {
 				if (product.id === productData.id)
@@ -59,7 +61,7 @@ const CartContextProvider = (props) => {
 		if (productData.count > 1) {
 			changeProducts([...products].map((product) => {
 				if (product.id === productData.id)
-					return {...productData, count: productData.count + 1};
+					return {...productData, count: productData.count - 1};
 				return product;
 			}));
 		} else {

@@ -2,13 +2,14 @@
 	border-radius: $border-radius-size;
 	overflow: hidden;
 	flex-direction: column;
-	display:inline-flex;
+	@include displayInlineFlex();
 	cursor: pointer;
 	background: white;
 	@include crossTransition(all ease .4s);
 	.title {
 		line-height: 1.8;
 		height: 85px;
+
 		overflow: hidden;
 	}
 	&:hover {
@@ -16,7 +17,7 @@
 	}
 	.content {
 		flex: 1;
-		padding: 0 30px; 
+		padding: 0 30px;
 	}
 	.image {
 		flex: 1;
@@ -28,11 +29,11 @@
 	}
 	.shopping {
 		margin: 50px 0 30px 0;
-		display: inline-flex;
+		@include displayInlineFlex();
 		align-items: center;
 		justify-content: space-around;
 		width: 100%;
-		.price , .cta {
+		.price, .cta {
 			flex: 1;
 		}
 		.price {
@@ -44,6 +45,7 @@
 		}
 	}
 }
+
 .Product-wrapper {
 	margin: 10px 0;
 }
@@ -78,11 +80,11 @@
 			font-size: .7em;
 			height: 38px;
 			margin-bottom: 15px;
-			font-weight:bold;
+			font-weight: bold;
 		}
-		.image { 
+		.image {
 			margin: 0;
-			img{
+			img {
 				height: 100%;
 			}
 		}

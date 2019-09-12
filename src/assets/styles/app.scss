@@ -1,5 +1,5 @@
 @import './abstracts/variables.scss';
-@import './abstracts//utilities.scss';
+@import './abstracts/utilities.scss';
 @import './abstracts/mixins.scss';
 @import './abstracts/typography.scss';
 @import './vendor/reset.scss';
@@ -7,3 +7,4 @@
 @import './components/productBox.scss';
 @import './components/forms.scss';
 @import './components/header.scss';
+@import './components/cart';

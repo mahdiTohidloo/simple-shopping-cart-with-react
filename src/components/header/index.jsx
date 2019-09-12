@@ -1,5 +1,6 @@
 import React from 'react';
 import Sort from './sort';
+import Cart from "../cart";
 
 const Header = () => {
 	return (
@@ -7,8 +8,15 @@ const Header = () => {
 			<div className="col l12 s12">
 				<div className="Header">
 					<h1 className="title">تخفیفان</h1>
-					<div className="controls Left">
-						<Sort />
+					<div className="controls Left row">
+						<div className="col l6">
+							<Cart/>
+						</div>
+						<div className="col l6 ">
+							<div className="Left">
+								<Sort/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

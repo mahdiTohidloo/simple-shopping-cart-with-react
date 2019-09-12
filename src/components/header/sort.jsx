@@ -10,7 +10,7 @@ const Sort = () => {
 	const [showSort, changeSortMenuStatus] = useState(false);
 	const toggleSortMenu = () => {
 		changeSortMenuStatus(!showSort);
-	}
+	};
  
 	return (
 		<ul className="Sort">

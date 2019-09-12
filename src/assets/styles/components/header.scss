@@ -1,7 +1,7 @@
 .Header {
 	background:white;
 	@include boxShadow();
-	display: inline-flex;
+	@include displayInlineFlex();
 	width: 100%;
 	box-sizing:border-box;
 	align-items: center;
@@ -16,16 +16,25 @@
 		float:right;
 		flex:1;
 	}
+	.controls {
+		width: 40%;
+		margin-bottom: 0;
+	}
 }
 
 .Sort {
-	text-align: left;
+	max-width: 160px;
 	> li {
 		cursor: pointer;
 		position:relative;
+		text-align: center;
 		border: 1px solid $color-grey;
 		border-radius: $border-radius-size;
 		padding: 10px 18px;
+		@include crossTransition();
+		&:hover {
+			@include boxShadow();
+		}
 		> i {
 			vertical-align: middle;
 			font-size: 40px;
