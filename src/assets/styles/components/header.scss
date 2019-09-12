@@ -1,0 +1,10 @@
+.Header {
+	background:white;
+	@include boxShadow();
+	padding: 33px 30px;
+	border-radius: $border-radius-size;
+	margin: 50px 0 0 0;
+	.title {
+		font-size: 1.4em;
+	}
+}

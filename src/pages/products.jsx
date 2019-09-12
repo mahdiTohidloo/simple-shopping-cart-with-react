@@ -27,7 +27,7 @@ const Products = () => {
 				{
 					// generate product box list by saved data in context
 					context.data.map((product, index) =>
-						<div key={index} className="col l4 s12 Product-wrapper">
+						<div key={index} className="col l4 m6 s12 Product-wrapper">
 							<ProductBox data={product}/>
 						</div>
 					)

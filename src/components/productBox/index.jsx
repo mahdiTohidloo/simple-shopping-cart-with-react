@@ -22,16 +22,13 @@ const ProductBox = ({ data }) => {
 						{ convertEnglishNumberToPersian(data.price)} تومان
 					</span>
 					<span className="cta">
-						<Button className="Full-width hide-on-small-and-down" disabled={data.quantity === 0}>
-							همین حالا خرید کن
-						</Button>
-						<Button className="hide-on-med-and-up">
-							<i className="material-icons">add</i>
-						</Button>
+						<Button
+							className="Full-width"
+							disabled={data.quantity === 0}
+						/>
 					</span>
 				</div>
 			</div>
-
 		</section>
 	);
 };
