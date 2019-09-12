@@ -5,12 +5,16 @@ import {CartContext}        from "../../store/cart";
 const ProductBox = ({ data }) => {
 	const context = useContext(CartContext);
 
-
+	const productImages = [
+		require('../../assets/images/product1.jpg'),
+		require('../../assets/images/product2.jpg'),
+		require('../../assets/images/product3.jpg'),
+	];
 	console.log(context.data);
 	return (
 		<section className="Product-box">
 			<figure className="image">
-				<img src={require('../../assets/images/product1.jpg')} alt="" />
+				<img src={productImages[Math.floor(Math.random() * (+2 - +0)) + +0 ]} alt="" />
 			</figure>
 			<div className="content">
 				<h2 className="title">
@@ -19,6 +23,7 @@ const ProductBox = ({ data }) => {
 				<p className="Ellipsis">
 					{data.description}
 				</p>
+				<span className={data.quantity === 0 ? "sold-out" : "Display-none"}>تمام شد</span>
 				<div className="shopping">
 					<span className="price">
 						{data.price} تومان

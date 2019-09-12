@@ -5,6 +5,7 @@
 	@include displayInlineFlex();
 	cursor: pointer;
 	background: white;
+	position: relative;
 	@include crossTransition(all ease .4s);
 	.title {
 		line-height: 1.8;
@@ -14,6 +15,16 @@
 	}
 	&:hover {
 		@include boxShadow();
+	}
+	.sold-out {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 20px 40px;
+		border-radius: $border-radius-size;
+		display: inline-block;
+		color:white;
+		background: $color-red;
 	}
 	.content {
 		flex: 1;
@@ -53,6 +64,11 @@
 @media screen and (max-width: $small-screen) {
 	.Product-box {
 		flex-direction: row;
+		.sold-out {
+			padding: 8px 15px;
+			right: 0;
+			left: unset;
+		}
 		.content {
 			padding: 5px;
 			flex: 1.3;
@@ -71,7 +87,7 @@
 					&::before {
 						content: '+';
 						font-size: 30px;
-						line-height: 1.3em;
+						line-height: 24px;
 					}
 				}
 			}

@@ -9,10 +9,10 @@ const Header = () => {
 				<div className="Header">
 					<h1 className="title">تخفیفان</h1>
 					<div className="controls Left row">
-						<div className="col l6">
+						<div className="col m6 l6">
 							<Cart/>
 						</div>
-						<div className="col l6 ">
+						<div className="col m6 l6 s12 ">
 							<div className="Left">
 								<Sort/>
 							</div>

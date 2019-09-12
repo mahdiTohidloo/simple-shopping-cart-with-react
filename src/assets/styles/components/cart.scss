@@ -5,6 +5,7 @@
 		position: absolute;
 		left: 0;
 		top: 100%;
+		z-index: 10;
 		background: $color-green;
 		padding: 0 5px;
 		overflow: hidden;
@@ -42,6 +43,8 @@
 	}
 	.title {
 		flex: 2.5;
+		@include displayInlineFlex();
+		align-items: center;
 		font-size: 13px;
 		.index-number {
 			width: 20px;
@@ -73,5 +76,49 @@
 			border-radius: $border-radius-size;
 		}
 	}
+}
 
+
+@media screen and (max-width: $small-screen) {
+	.Cart {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 10;
+		left: 0;
+		.cart-button {
+			height: 78px;
+			border-radius:0;
+			width: 100%;
+			&.no-data {
+				display: none;
+			}
+		}
+		.details {
+			bottom: 100%;
+			top: unset;
+			width: 100%;
+			max-height: 350px;
+			overflow: auto;
+			box-sizing:border-box;
+			border-radius: unset;
+		}
+	}
+	.Cart-product-item {
+		width: 100%;
+		border-radius: 0;
+		.title {
+			overflow: hidden;
+			flex: 2;
+		}
+		.price {
+			flex: .7;
+		}
+		.counting {
+			flex: 1;
+			i.material-icons {
+				font-size: 15px;
+			}
+		}
+	}
 }

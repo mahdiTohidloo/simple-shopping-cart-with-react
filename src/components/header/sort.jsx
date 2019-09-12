@@ -16,7 +16,7 @@ const Sort = () => {
 		<ul className="Sort">
 			<li onClick={toggleSortMenu}>
 				<i className="material-icons">sort</i>
-				<span>مرتب سازی</span>
+				<span className="hide-on-small-and-down">مرتب سازی</span>
 				<ul className={showSort ? 'submenu' : 'Display-none'}>
 					<li onClick={context.sortByNews}>جدید</li>
 					<li onClick={context.sortByMostSale}>پر فروش</li>
