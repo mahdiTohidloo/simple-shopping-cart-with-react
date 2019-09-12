@@ -8,24 +8,63 @@ const CartContextProvider = (props) => {
 	// save the products that added to cart
 	const [products, changeProducts] = useState([]);
 
-	const changeCartProducts = () => {
-		//TODO: write logic to change the products array
+	// add `count` property to product model to handle the product count to buy
+	const convertProductModelToCartModel = (productData) => {
+		return {...productData, count: 1};
+	};
+
+	const changeCartProducts = (newProducts) => {
+		changeProducts(newProducts || []);
 	};
 
 	const addProduct = (productData) => {
-		//TODO: write logic to add product
+		/*
+		* check if the product is exist in cart, increment the count of the product in cart.
+		* otherwise add it to cart as new product
+		*/
+		const isExist = products.filter((existProduct) => existProduct.id === productData.id).length !== 0;
+		if (isExist) {
+			// increment exist product count
+			incrementProductCount(productData);
+		} else {
+			// add product as new product
+			changeCartProducts([...products, convertProductModelToCartModel(productData)]);
+		}
 	};
 
 	const removeProduct = (productData) => {
-		//TODO: write logic to remove product
+		changeProducts([...products].filter((existProduct) => existProduct.id !== productData.id));
 	};
 
 	const incrementProductCount = (productData) => {
-		//TODO: write logic to increment the product count
+		/*
+		 * if selected products count is lower than than the product quantity
+		 * then increment the products count
+		 */
+		if (productData.count < productData.quantity) {
+			changeProducts([...products].map((product) => {
+				if (product.id === productData.id)
+					return {...productData, count: productData.count + 1};
+				return product;
+			}));
+		}
 	};
 
 	const decrementProductCount = (productData) => {
-		//TODO: write logic to increment the product count
+		/*
+		 * if selected count of the product is more than one
+		 * then decrement  the products count
+		 * otherwise remove the product from cart
+		 */
+		if (productData.count > 1) {
+			changeProducts([...products].map((product) => {
+				if (product.id === productData.id)
+					return {...productData, count: productData.count + 1};
+				return product;
+			}));
+		} else {
+			removeProduct(productData);
+		}
 	};
 
 	const contextProps = {
