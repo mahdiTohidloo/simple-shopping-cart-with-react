@@ -11,6 +11,6 @@ const  App = () => {
         </AppContextProvider>
     </div>
   );
-}
+};
 
 export default App;

@@ -7,7 +7,7 @@ const Header = () => {
 		<header className="row">
 			<div className="col l12 s12">
 				<div className="Header">
-					<h1 className="title">تخفیفان</h1>
+					<h1 className="title">Simple Shopping Cart With React</h1>
 					<div className="controls Left row">
 						<div className="col m6 l6">
 							<Cart/>
@@ -22,7 +22,7 @@ const Header = () => {
 			</div>
 		</header>
 	);
-}
+};
 
 
 export default Header;
